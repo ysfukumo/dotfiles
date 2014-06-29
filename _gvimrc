@@ -1,0 +1,35 @@
+" font
+if has("win32") || has("win64")
+	set guifont=Ricty:h12
+	set antialias
+else
+	set guifont=Ricty:h18
+	set antialias
+endif
+
+
+" window
+"colorscheme desert
+colorscheme hhdgray
+
+if has("win32") || has("win64")
+	augroup guitransparency
+		autocmd!
+		autocmd GUIEnter * set transparency=220
+	augroup END
+	set lines=50 columns=120
+else
+	set transparency=10
+	set lines=50 columns=150
+endif
+set guioptions-=T
+set showtabline=2 " 2:always
+
+" beep off
+set visualbell t_vb=
+
+" auto IME ON/OFF
+if has('gui_macvim')
+	set noimdisableactivate
+endif
+
