@@ -7,6 +7,12 @@ else
 	set directory=/tmp
 endif
 
+
+"----------------------------------------------------------
+" undofile生成無効化
+"----------------------------------------------------------
+set noundofile
+
 "----------------------------------------------------------
 " クリップボード
 "----------------------------------------------------------
@@ -39,11 +45,11 @@ set statusline=%n\:%y%F\ \|%{(&fenc!=''?&fenc:&enc).'\|'.&ff.'\|'}%m%r%=<%c><%l/
 " オートインデントを無効にする
 "set noautoindent
 " タブが対応する空白の数
-set tabstop=4
+set tabstop=2
 " タブやバックスペースの使用等の編集操作をするときに、タブが対応する空白の数
-set softtabstop=4
+set softtabstop=2
 " インデントの各段階に使われる空白の数
-set shiftwidth=4
+set shiftwidth=2
 " タブを挿入するとき、代わりに空白を使わない
 "set noexpandtab
 " タブを挿入するとき、代わりに空白を使う
@@ -117,6 +123,7 @@ endif
 
 " NeoBundle
 NeoBundle 'https://github.com/Shougo/unite.vim'
+NeoBundle 'https://github.com/Shougo/neomru.vim'
 NeoBundle 'https://github.com/thinca/vim-ref'
 NeoBundle 'https://github.com/thinca/vim-quickrun'
 NeoBundle 'https://github.com/Shougo/vimfiler.vim'
@@ -246,5 +253,10 @@ map <silent> [Tag]n :tabnext<CR>
 " tn 次のタブ
 map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
+
+"----------------------------------------------------------
+" foldの設定
+"----------------------------------------------------------
+set foldlevel=100 "Don't autofold anything
 
 
