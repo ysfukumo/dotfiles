@@ -1,10 +1,10 @@
 " backupfile and swapfile path
 if has("win32") || has("win64")
-	set nobackup
-	set noswapfile
+  set nobackup
+  set noswapfile
 else
-	set backupdir=/tmp
-	set directory=/tmp
+  set backupdir=/tmp
+  set directory=/tmp
   set notitle
 endif
 
