@@ -5,6 +5,7 @@ if has("win32") || has("win64")
 else
 	set backupdir=/tmp
 	set directory=/tmp
+  set notitle
 endif
 
 
