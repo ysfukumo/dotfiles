@@ -62,6 +62,15 @@ set tags+=~/tags/java6
 set tags+=~/tags/android
 
 "----------------------------------------------------------
+" golang 
+"----------------------------------------------------------
+set rtp+=$GOROOT/misc/vim
+exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+set completeopt=menu,preview
+
+
+
+"----------------------------------------------------------
 " キーマップ
 "----------------------------------------------------------
 " _vimrc / _gvimrcを開く ( space + v / space + g )
