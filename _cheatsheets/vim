@@ -1,17 +1,24 @@
-# File management
+# ----------------------------------------
+# File management(CommandMode)
+# ----------------------------------------
 
-:e              reload file
-:q              quit
-:q!             quit without saving changes
-:w              write file
-:w {file}       write new file
-:x              write file and exit
+:e              再読み込み
+:q              終了
+:q!             強制終了
+:w              保存
+:w {file}       別名で保存
+:x              保存して終了
+:wq             保存して終了
 
-# Movement
 
-    k
-  h   l         basic motion
-    j
+# ----------------------------------------
+# Movement(CommandMode)
+# ----------------------------------------
+
+k               上
+j               下
+h               左
+l               右
 
 w               next start of word
 W               next start of whitespace-delimited word
@@ -25,9 +32,11 @@ gg              go to first line in file
 G               go to end of file
 
 
+# ----------------------------------------
 # Insertion
 #   To exit from insert mode use Esc or Ctrl-C
 #   Enter insertion mode and:
+# ----------------------------------------
 
 a               append after the cursor
 A               append at the end of the line
@@ -38,7 +47,9 @@ O               create a new line above the cursor
 R               enter insert mode but replace instead of inserting chars
 :r {file}       insert from file
 
+# ----------------------------------------
 # Editing
+# ----------------------------------------
 
 u               undo
 yy              yank (copy) a line
@@ -50,8 +61,10 @@ dd              delete a line
 d{motion}       delete text that {motion} moves over
 
 
+# ----------------------------------------
 # Preceding a motion or edition with a number repeats it n times
 # Examples:
+# ----------------------------------------
 50k         moves 50 lines up
 2dw         deletes 2 words
 5yy         copies 5 lines
