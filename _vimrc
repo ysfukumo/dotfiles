@@ -130,6 +130,7 @@ NeoBundle 'https://github.com/thinca/vim-quickrun'
 NeoBundle 'https://github.com/Shougo/vimfiler.vim'
 NeoBundle 'https://github.com/itchyny/lightline.vim'
 NeoBundle 'https://github.com/nathanaelkane/vim-indent-guides'
+NeoBundle 'https://github.com/mattn/vim-cheat'
 
 
 NeoBundle 'https://github.com/Shougo/vimproc', {
