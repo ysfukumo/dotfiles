@@ -140,6 +140,8 @@ NeoBundle 'https://github.com/Shougo/vimfiler.vim'
 NeoBundle 'https://github.com/itchyny/lightline.vim'
 NeoBundle 'https://github.com/nathanaelkane/vim-indent-guides'
 NeoBundle 'https://github.com/mattn/vim-cheat'
+NeoBundle 'https://github.com/ctrlpvim/ctrlp.vim'
+NeoBundle 'https://github.com/nixprime/cpsm'
 
 
 NeoBundle 'https://github.com/Shougo/vimproc', {
@@ -265,9 +267,93 @@ map <silent> [Tag]n :tabnext<CR>
 map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
 
+
+"----------------------------------------------------------
+" ウィンドウ分割関連設定(Ctrl-w)
+"----------------------------------------------------------
+nnoremap ss <C-W>s  "上下分割(split)
+nnoremap sv <C-W>v  "左右分割(vertical)
+nnoremap sw <C-W>w  "次のウィンドウに移動(window)
+nnoremap sc <C-W>c  "現在のウィンドウを閉じる(close)
+nnoremap so <C-W>o  "現在のウィンドウ以外を閉じる(only)
+
+nnoremap sj <C-W>j  "下のウィンドウに移動
+nnoremap sk <C-W>k  "上のウィンドウに移動
+nnoremap <silent> sh <C-W>h:call <SID>good_width()<CR>  "左のウィンドウへ移動
+nnoremap <silent> sl <C-W>l:call <SID>good_width()<Cr>  "右のウィンドウへ移動
+" ウィンドウの幅をいい感じにする
+function! s:good_width()
+  if winwidth(0) < 84
+    vertical resize 84
+  endif
+endfunction
+
+" ウィンドウの縦幅を大きくする/小さくする
+nnoremap + <C-W>+
+nnoremap - <C-W>-
+" ウィンドウの横幅を大きくする/小さくする
+nnoremap ) <C-W>> 
+nnoremap ( <C-W><LT>
+
+" ウィンドウの大きさを最大化する
+function! s:big()
+    wincmd _ | wincmd |
+endfunction
+nnoremap <silent> s<CR> :<C-u>call <SID>big()<CR> " 最大化
+nnoremap s0 1<C-W>_ " 最小化
+nnoremap s. <C-W>=  " 全部同じ大きさにする
+
+
 "----------------------------------------------------------
 " foldの設定
 "----------------------------------------------------------
 set foldlevel=100 "Don't autofold anything
 
+"----------------------------------------------------------
+" Unite.vimの設定
+"----------------------------------------------------------
+" 起動時にインサートモードで開始
+let g:unite_enable_start_insert = 1
+
+" The prefix key.
+nnoremap    [unite]   <Nop>
+nmap    <Space>u [unite]
+
+" unite.vim keymap
+let g:unite_source_history_yank_enable =1
+nnoremap <silent> [unite]u :<C-u>Unite<Space>file<CR>
+nnoremap <silent> [unite]g :<C-u>Unite<Space>grep<CR>
+nnoremap <silent> [unite]f :<C-u>Unite<Space>buffer<CR>
+nnoremap <silent> [unite]b :<C-u>Unite<Space>bookmark<CR>
+nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
+nnoremap <silent> [unite]m :<C-u>Unite<Space>file_mru<CR>
+nnoremap <silent> [unite]h :<C-u>Unite<Space>history/yank<CR>
+nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> [unite]c :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ,vr :UniteResume<CR>
+" vinarise
+let g:vinarise_enable_auto_detect = 1 
+" unite-build map
+nnoremap <silent> ,vb :Unite build<CR>
+nnoremap <silent> ,vcb :Unite build:!<CR>
+nnoremap <silent> ,vch :UniteBuildClearHighlight<CR>
+
+nnoremap <silent> ,g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+if executable('pt')
+  let g:unite_source_grep_command = 'pt'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor'
+  let g:unite_source_grep_recursive_opt = ''
+  let g:unite_source_grep_encoding = 'utf-8'
+endif
+
+" unite-grepの便利キーマップ
+" Ctrl-vで単語選択後、/gで検索
+vnoremap /g y:Unite grep::-iRn:<C-R>=escape(@", '\\.*$^[]')<CR><CR>
+
+
+"----------------------------------------------------------
+" CtrlPの設定
+"----------------------------------------------------------
+let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
+let g:ctrlp_user_command = 'files -p %s'
 
