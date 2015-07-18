@@ -124,6 +124,7 @@ filetype off
 if has('vim_starting')
     if has("win32") || has("win64")
         set rtp+=~/vimfiles/neobundle.vim
+        set rtp+=~/vimfiles/after
         call neobundle#rc(expand('~/vimfiles/bundle/'))
     else
         set rtp+=~/.vim/neobundle.vim
