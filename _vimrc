@@ -69,6 +69,8 @@ set rtp+=$GOROOT/misc/vim
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
 set completeopt=menu,preview
 
+" vim-go-extra
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 
 "----------------------------------------------------------
@@ -143,6 +145,7 @@ NeoBundle 'https://github.com/nathanaelkane/vim-indent-guides'
 NeoBundle 'https://github.com/mattn/vim-cheat'
 NeoBundle 'https://github.com/ctrlpvim/ctrlp.vim'
 NeoBundle 'https://github.com/nixprime/cpsm'
+NeoBundle 'https://github.com/vim-jp/vim-go-extra'
 
 
 NeoBundle 'https://github.com/Shougo/vimproc', {
