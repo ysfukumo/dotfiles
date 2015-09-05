@@ -146,6 +146,7 @@ NeoBundle 'https://github.com/mattn/vim-cheat'
 NeoBundle 'https://github.com/ctrlpvim/ctrlp.vim'
 NeoBundle 'https://github.com/nixprime/cpsm'
 NeoBundle 'https://github.com/vim-jp/vim-go-extra'
+NeoBundle 'https://github.com/NLKNguyen/papercolor-theme'
 
 
 NeoBundle 'https://github.com/Shougo/vimproc', {

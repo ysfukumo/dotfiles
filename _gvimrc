@@ -7,10 +7,14 @@ else
   set antialias
 endif
 
-
-" window
+"----------------------------------------------------------
+" colortheme
+"----------------------------------------------------------
 "colorscheme desert
-colorscheme hhdgray
+"colorscheme hhdgray
+set background=dark
+colorscheme PaperColor
+
 
 if has("win32") || has("win64")
   augroup guitransparency
