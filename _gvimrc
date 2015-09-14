@@ -1,6 +1,6 @@
 " font
 if has("win32") || has("win64")
-  set guifont=Ricty:h12
+  set guifont=Myrica_M:h12
   set antialias
 else
   "set guifont=Ricty:h18
