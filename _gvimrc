@@ -1,7 +1,12 @@
 " font
 if has("win32") || has("win64")
-  set guifont=Myrica_M:h12
-  set antialias
+  "set guifont=Myrica_M:h12
+  "set guifont=Ricty_Diminished:h15:cSHIFTJIS
+  "set guifont=Ricty_Diminished:h15
+  set guifont=Ricty_Diminished:h18
+  "set guifont=Myrica_M:h15
+  "set antialias
+  set ambiwidth=double
 else
   "set guifont=Ricty:h18
   set guifont=MyricaM:h18
@@ -18,9 +23,11 @@ colorscheme PaperColor
 
 
 if has("win32") || has("win64")
+  set encoding=utf-8
+  scriptencoding utf-8
   augroup guitransparency
     autocmd!
-    autocmd GUIEnter * set transparency=220
+    "autocmd GUIEnter * set transparency=220
   augroup END
   set lines=50 columns=120
 else

@@ -20,6 +20,8 @@ else
   set viminfo+=n~/var/vim/info
 endif
 
+set enc=utf-8
+set fencs=ucs-bom,utf-8,iso-2022-jp,euc-jp,cp932,utf-16le,utf-16,default
 
 "----------------------------------------------------------
 " クリップボード
@@ -79,15 +81,6 @@ nnoremap <Space>g :<C-u>tabedit ~/dotfiles/_gvimrc<CR>
 "----------------------------------------------------------
 " VimPlug
 "----------------------------------------------------------
-if has('vim_starting')
-  set rtp+=~/var/vim/plugged/vim-plug
-  if !isdirectory(expand('~/var/vim/plugged/vim-plug'))
-    echo 'install vim-plug...'
-    call system('mkdir -p ~/var/vim/plugged/vim-plug')
-    call system('git clone https://github.com/junegunn/vim-plug.git ~/var/vim/plugged/vim-plug/autoload')
-  end
-endif
-
 call plug#begin('~/.vim/plugged')
   Plug 'junegunn/vim-plug',
         \ {'dir': '~/.vim/plugged/vim-plug/autoload'}
@@ -105,4 +98,5 @@ call plug#end()
 "----------------------------------------------------------
 let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 let g:ctrlp_user_command = 'files -p %s'
+
 
