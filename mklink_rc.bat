@@ -1,3 +1,3 @@
-mklink %HOME%\_vimrc %HOME%\dotfiles\_vimrc
-mklink %HOME%\_gvimrc %HOME%\dotfiles\_gvimrc
+mklink %HOMEPATH%\_vimrc %HOMEPATH%\dotfiles\_vimrc
+mklink %HOMEPATH%\_gvimrc %HOMEPATH%\dotfiles\_gvimrc
 pause
