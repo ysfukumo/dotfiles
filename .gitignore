@@ -1,0 +1,14 @@
+### Local settings ###
+*.local
+local.*
+!local.*.sample
+
+### Zsh cache ###
+*.zwc
+.zcomp*
+config/zsh/.zsh_history
+config/zsh/.zsh_sessions
+
+### ignore
+config/iterm2/AppSupport
+
